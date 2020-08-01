@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content%}
+<!-- Posts -->
+<section>
+    <header class="major">
+        <h2>Artículos</h2>
+    </header>
+
+    <div class="paginator">
+        <ul class="pagination">
+            <li><span class="button disabled">Prev</span></li>
+            <li><a href="#" class="page active">1</a></li>
+            <li><a href="#" class="page">2</a></li>
+            <li><a href="#" class="page">3</a></li>
+            <li><span>&hellip;</span></li>
+            <li><a href="#" class="page">8</a></li>
+            <li><a href="#" class="page">9</a></li>
+            <li><a href="#" class="page">10</a></li>
+            <li><a href="#" class="button">Next</a></li>
+        </ul>
+    </div>
+
+
+    <div class="posts">
+        {% for post in posts %}
+        <article>
+            <a href="{{ post.get_absolute_url }}" class="image"><img src="{% static 'core/img/pic01.jpg' %}" alt="" /></a>
+            <a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
+            <span class="tags-info">
+                <a href="#"><i class="fa fa-tag" aria-hidden="true"></i></a>
+                <a href="#">Flask</a>
+                <a href="#">Scrapy</a>
+                <a href="#">Python</a>
+                <a href="#">Docker</a>
+            </span>
+        </article>
+        {% endfor %}
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <li><span class="button disabled">Prev</span></li>
+            <li><a href="#" class="page active">1</a></li>
+            <li><a href="#" class="page">2</a></li>
+            <li><a href="#" class="page">3</a></li>
+            <li><span>&hellip;</span></li>
+            <li><a href="#" class="page">8</a></li>
+            <li><a href="#" class="page">9</a></li>
+            <li><a href="#" class="page">10</a></li>
+            <li><a href="#" class="button">Next</a></li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
