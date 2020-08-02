@@ -1,13 +1,13 @@
+{% load static %}
 <!DOCTYPE HTML>
 <html>
 	<head>
         <title>{% block title %}The blog of Santeive{% endblock %}</title>
-        {% load static %}
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
-		<link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+		<link rel="stylesheet" href="{% static 'posts/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'posts/css/custom.css' %}" />
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -117,10 +117,10 @@
 			</div>
 		</div>
 		<!-- Scripts -->
-		<script src="{% static 'js/jquery.min.js' %}"></script>
-		<script src="{% static 'js/browser.min.js' %}"></script>
-		<script src="{% static 'js/breakpoints.min.js' %}"></script>
-		<script src="{% static 'js/util.js' %}"></script>
-		<script src="{% static 'js/main.js' %}"></script>
+		<script src="{% static 'posts/js/jquery.min.js' %}"></script>
+		<script src="{% static 'posts/js/browser.min.js' %}"></script>
+		<script src="{% static 'posts/js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'posts/js/util.js' %}"></script>
+		<script src="{% static 'posts/js/main.js' %}"></script>
 	</body>
 </html>

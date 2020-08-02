@@ -96,7 +96,7 @@ body {
 
 /* Type */
 body, input, select, textarea {
-  color: #000;
+  color: #7f888f;
   font-family: "Open Sans", sans-serif;
   font-size: 13pt;
   font-weight: 400;
@@ -2102,7 +2102,7 @@ button,
   display: -ms-flex;
   display: flex;
   border-bottom: solid 5px #f56a6a;
-  padding: 3em 0 1em 0;
+  padding: 6em 0 1em 0;
   position: relative; }
   #header > * {
     -moz-flex: 1;
