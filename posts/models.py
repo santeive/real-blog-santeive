@@ -2,8 +2,8 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.urls import reverse
 from django.utils import timezone
+from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
-
 
 # Custom manager
 class PublishedManager(models.Manager):
@@ -21,9 +21,7 @@ class Post(models.Model):
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique_for_date='publish')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
-
     image = models.ImageField(upload_to='posts', blank=True)
-
     body = RichTextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)

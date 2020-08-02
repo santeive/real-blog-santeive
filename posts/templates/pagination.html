@@ -1,0 +1,19 @@
+<div class="paginator">
+    <ul class="pagination">
+        {% if page.has_previous %}
+        <li><a href="?page={{ page.previous_page_number }}" class="button enable">Prev</a></li>
+        {% else %}
+        <li><a class="button disabled">Prev</a></li>
+        {% endif %}
+
+        {% for number in page.paginator.page_range %}
+        <li><a href="?page={{ number }}" class="page">{{ number }}</a></li>
+        {% endfor %}
+
+        {% if page.has_next %}
+        <li><a href="?page={{ page.next_page_number }}" class="button enable">Next</a></li>
+        {% else %}
+        <li><a class="button disabled">Next</a></li>
+        {% endif %}
+    </ul>
+</div>
