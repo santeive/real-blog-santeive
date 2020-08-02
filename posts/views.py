@@ -6,6 +6,8 @@ from .models import Post
 def index(request):
     return render(request, "core/home.html")
 
+def about(request):
+    return render(request, "posts/about.html")
 
 def post_list(request, tag_slug=None):
     posts = Post.published.all()
