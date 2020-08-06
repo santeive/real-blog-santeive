@@ -96,7 +96,7 @@ body {
 
 /* Type */
 body, input, select, textarea {
-  color: #7f888f;
+  color: #000;
   font-family: "Open Sans", sans-serif;
   font-size: 13pt;
   font-weight: 400;
@@ -139,6 +139,11 @@ p {
   font-size: 0.8em;
 }
 
+img.cover {
+	width: 416px;
+	height: 256px;
+}
+
 .tags-info a{
   font-size: .7em;
   border-radius: .25em;
@@ -148,6 +153,16 @@ p {
   color: #999;
   font-weight: 1000;
 }
+
+.tags-used a{
+	font-size: 1.0em;
+	border-radius: .25em;
+	border: 0;
+	padding: 0 .3em 0 .3em;
+	color: #f56a6a;
+	font-weight: 1000;
+  }
+
 
 .tags-info a:hover {
   background-color: #adadad;

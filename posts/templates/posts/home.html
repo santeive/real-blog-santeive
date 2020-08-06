@@ -17,7 +17,7 @@
     <div class="posts"> 
         {% for post in posts %}
         <article>
-            <a href="{{ post.get_absolute_url }}" class="image"><img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'posts/img/pic01.jpg' %} {% endif %}" alt="cover"/></a>
+            <a href="{{ post.get_absolute_url }}" class="image"><img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'posts/img/pic01.jpg' %} {% endif %}" class="cover" alt="cover"/></a>
             <a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
             <span class="tags-info">
                 <a href="#"><i class="fa fa-tag" aria-hidden="true"></i></a>

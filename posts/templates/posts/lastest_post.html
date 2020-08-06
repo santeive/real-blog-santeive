@@ -1,8 +1,8 @@
 {% for post in latest_posts %}
+{% load static %}
 <article>
-    {% if post.image %}
-    <img src="{{ post.image.url }}" alt="cover">
-    {% endif %}
+    <a href="{{ post.get_absolute_url }}" class="image"><img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'posts/img/pic01.jpg' %} {% endif %}" class="cover" alt="cover"/></a>
     <a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
 </article>
 {% endfor %}
+
