@@ -134,11 +134,13 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'Custom',
         'toolbar_Custom': [
             ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'Blockquote'],
             ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source', 'CodeSnippet']
+            ['RemoveFormat', 'Source', 'CodeSnippet'],
+            ['Styles', 'Format', 'Font', 'FontSize']
         ],
-        'extraPlugins':'codesnippet'
+        'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
+        'extraPlugins': ','.join(['mathjax','codesnippet']),  
     }
 }
 

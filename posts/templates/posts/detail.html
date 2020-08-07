@@ -43,20 +43,6 @@
         </article>
         {% endfor %}
     </div>
-
-    <!-- <section>
-        <h2>Similar posts</h2>
-        {% for post in similar_posts %}
-        
-        <article>
-            <a href="{{ post.get_absolute_url }}" class="image"><img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'posts/img/pic01.jpg' %} {% endif %}" class="cover" alt="cover"/></a>
-            <a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
-        </article>
-        {% empty %}
-        There are no similar posts yet.
-        {% endfor %}
-    </section> -->
-
 </section>
 
 {% endblock %}
