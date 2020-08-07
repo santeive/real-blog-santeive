@@ -1,0 +1,11 @@
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+
+p.author {
+  margin: 0 0 0 0; 
+}
+
+img.cover {
+	width: 416px;
+	height: 256px;
+}

@@ -18,11 +18,19 @@ class Post(models.Model):
         ('published', 'Published')
     )
 
+    READING_CHOICES = (
+        ('5 minutes', '5 Minutes' ),
+        ('10 minutes', '10 Minutes'),
+        ('20 minutes', '20 Minutes'),
+        ('30 minutes', '30 Minutes')
+    )
+
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique_for_date='publish')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    reading = models.CharField(max_length=20, choices=READING_CHOICES, default='5 minutes')
     image = models.ImageField(upload_to='posts', blank=True)
-    body = RichTextField()
+    body = RichTextField(blank=True, null=True)
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

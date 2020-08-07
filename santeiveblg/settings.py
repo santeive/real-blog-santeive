@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'taggit',
     'ckeditor',
+    'ckeditor_uploader',
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,7 +128,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 #ckeditor
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'None',
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source', 'CodeSnippet']
+        ],
+        'extraPlugins':'codesnippet'
     }
 }
 
