@@ -24,6 +24,7 @@ DEBUG = config('DEBUG', cast=bool, default=True)
 
 ALLOWED_HOSTS = ['desolate-peak-93575.herokuapp.com','127.0.0.1']
 
+SITE_ID = 1
 
 # Application definition
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'taggit',
     'ckeditor',
     'ckeditor_uploader',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"

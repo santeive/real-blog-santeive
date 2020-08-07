@@ -4,11 +4,6 @@ from taggit.models import Tag
 from .models import Post
 from django.db.models import Count
 
-
-# Create your views here.
-def index(request):
-    return render(request, "core/home.html")
-
 def about(request):
     return render(request, "posts/about.html")
 
