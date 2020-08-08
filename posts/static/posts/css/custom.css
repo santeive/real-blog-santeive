@@ -9,3 +9,7 @@ img.cover {
 	width: 416px;
 	height: 256px;
 }
+
+img.author {
+	width :150px;
+}

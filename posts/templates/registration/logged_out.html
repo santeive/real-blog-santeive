@@ -1,0 +1,17 @@
+{% extends 'posts/base.html' %}
+{% block title %}Logged out{% endblock %}
+
+{% block content%}
+<section>
+    <div class="content">
+        <div class="row">
+            <!-- Break -->
+            <div class="col-12 col-12-medium">
+                <h2>Logged out</h2>
+                <p>You have been successfully logged out.</p>
+                <p>Here, you can <a href="{% url 'posts:login' %}">Log-in again</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
