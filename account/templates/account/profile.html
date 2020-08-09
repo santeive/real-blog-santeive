@@ -1,0 +1,21 @@
+{% extends 'posts/base.html' %}
+{% block title %}My profile{% endblock %}
+
+{% block content%}
+<section>
+    <div class="content">
+        <div class="row">
+            <!-- Break -->
+            <div class="col-12 col-12-medium">
+                <h2>My profile</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {{ user_form.as_p}}
+                    {{ profile_form.as_p}}
+                    {% csrf_token %}
+                    <p><input type="submit" value="Update"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

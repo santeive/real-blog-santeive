@@ -12,6 +12,4 @@ urlpatterns = [
     path('about/', views.about, name="about"),
     path('post/<int:year>/<int:month>/<int:day>/<slug:post>', views.post_detail, name="post_detail"),
     path('feed/', LastestPostsFeed(), name='post_feed'),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]

@@ -4,13 +4,13 @@ from django.urls import reverse
 from django.utils import timezone
 from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
+from django.conf import settings
 
 # Custom manager
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status='published')
 
-# Create your models here.
 class Post(models.Model):
 
     STATUS_CHOICES = (

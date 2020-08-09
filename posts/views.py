@@ -6,7 +6,6 @@ from .models import Post
 from django.db.models import Count
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from .forms import LoginForm
 
 def about(request):
     return render(request, "posts/about.html", {'section':'about'})
@@ -76,21 +75,3 @@ def post_detail(request, year, month, day, post):
                 {'post':post,
                  'similar_posts': similar_posts})
 
-""" def user_login(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user = authenticate(request, username=cd['username'], password=cd['password'])
-
-            if user:
-                if user.is_active:
-                    login(request, user)
-                    return HttpResponse('Authenticated Successfully')
-                else:
-                    return HttpResponse('Disable Account')
-            else:
-                return HttpResponse('Invalid Login')
-    else:
-        form = LoginForm()
-    return render(request, 'posts/login.html', {'form': form}) """
