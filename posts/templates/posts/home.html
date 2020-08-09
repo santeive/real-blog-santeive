@@ -8,9 +8,8 @@
         {% if tag %}
         <h3>Posts tagged with "{{ tag.name }}"</h3>
         {% endif %}
-        <h2>Artículos</h2>
+        <h2>Articles</h2>
     </header>
-    
     
     {% include "pagination.html" with page=posts %}
 
@@ -28,7 +27,7 @@
         </article>
         {% endfor %}
     </div>
-
+    
     {% include "pagination.html" with page=posts %}
     
 </section>
