@@ -6,6 +6,8 @@ from .models import Post
 from django.db.models import Count
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from .forms import CreateArticleForm
+from django.contrib import messages
 
 def about(request):
     return render(request, "posts/about.html", {'section':'about'})
@@ -15,6 +17,7 @@ def dashboard(request, tag_slug=None):
     object_list = Post.objects.filter(author=request.user)
     tag = None
 
+    #Filtrar los tags por user
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
         object_list = object_list.filter(tags__in=[tag])
@@ -32,8 +35,15 @@ def dashboard(request, tag_slug=None):
     return render(request,
                  'posts/dashboard.html',
                  {'page': page,
-                  'posts': posts,
-                  'tag':tag})
+                  'posts': posts})
+
+@login_required
+def create_article(request):
+    form = CreateArticleForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+
+    return render(request, 'posts/create_article.html', {'form':form} )
 
 def post_list(request, tag_slug=None):
     object_list = Post.published.all()

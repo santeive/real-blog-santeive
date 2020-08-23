@@ -1,0 +1,21 @@
+{% extends 'posts/base.html' %}
+
+{% block title %}My profile{% endblock %}
+
+{% block content%}
+<section>
+    <div class="content">
+        <div class="row">
+            <!-- Break -->
+            <div class="col-12 col-12-medium">
+                <h2>Create article</h2>
+                <form method="post">
+                    {{ form.as_p}}
+                    {% csrf_token %}
+                    <p><input type="submit" value="Create"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
