@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'storages',
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
@@ -130,6 +131,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 LOGIN_REDIRECT_URL = 'posts:dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+#S3 BUCKETS CONFIG
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+
+AWS_S3_FILE_OVERWRITE = config('AWS_S3_FILE_OVERWRITE')
+AWS_DEFAULT_ACL = config('AWS_DEFAULT_ACL')
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 #ckeditor
 CKEDITOR_CONFIGS = {
