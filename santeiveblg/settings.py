@@ -38,14 +38,11 @@ INSTALLED_APPS = [
     'taggit',
     'ckeditor',
     'ckeditor_uploader',
-<<<<<<< HEAD
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'storages',
     'django.contrib.postgres',
     'django_social_share',
-=======
->>>>>>> 90b3bcf... format and ckeditor
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
