@@ -12,7 +12,6 @@
 
     <section class="author">
         <p class="author">Author: <strong> {{ post.author }} </strong></p>
-<<<<<<< HEAD
         <p class="author"><i class="fa fa-calendar" aria-hidden="true"></i> {{post.created|date:'Y-m-d'}} | <i class="fa fa-clock-o"></i> {{ post.reading }} read </p>
         <span class="social">
             <div class="social facebook">
@@ -22,9 +21,6 @@
                 {% post_to_linkedin object_or_url %}
             </div>
         </span>
-=======
-        <p class="author"><i class="fa fa-calendar" aria-hidden="true"></i> {{post.created}} | <i class="fa fa-clock-o"></i> {{ post.reading }} read </p>
->>>>>>> 90b3bcf... format and ckeditor
         <span class="tags-info">
             <a><i class="fa fa-tag" aria-hidden="true"></i></a>
             {% for tag in post.tags.all %}
@@ -61,11 +57,7 @@
             <a href="{{ post.get_absolute_url }}" class="image"><img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'posts/img/pic01.jpg' %} {% endif %}" class="cover" alt="cover"/></a>
             <a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
             <span class="tags-info">
-<<<<<<< HEAD
                 <i class="fa fa-tag" aria-hidden="true"></i>
-=======
-                <a href="#"><i class="fa fa-tag" aria-hidden="true"></i></a>
->>>>>>> 90b3bcf... format and ckeditor
                 {% for tag in post.tags.all %}
                 <a href="{% url 'posts:post_list_by_tag' tag.slug %}"> {{ tag.name }}</a>
                 {% endfor %}
