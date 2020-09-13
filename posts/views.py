@@ -1,13 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 from taggit.models import Tag
-from django.http import HttpResponse
 from .models import Post
+from django.http import HttpResponse
 from django.db.models import Count
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from .forms import CreateArticleForm
 from django.contrib import messages
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+from .forms import CreateArticleForm, SearchForm
 
 def about(request):
     return render(request, "posts/about.html", {'section':'about'})
@@ -85,3 +86,26 @@ def post_detail(request, year, month, day, post):
                 {'post':post,
                  'similar_posts': similar_posts})
 
+def post_search(request):
+    form = SearchForm()
+    query = None
+    results = []
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+
+            search_vector = SearchVector('title', weight='A') + \
+                            SearchVector('body', weight='B')
+            search_query = SearchQuery(query)
+
+            results = Post.published.annotate(
+                search=search_vector, 
+                rank=SearchRank(search_vector, search_query)
+            ).filter(rank__gte=0.3).order_by('-rank')
+
+    return render(request,
+                  'blog/post/search.html',
+                  {'form': form,
+                   'query': query,
+                   'results': results})

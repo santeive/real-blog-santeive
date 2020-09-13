@@ -1,5 +1,6 @@
 {% extends 'posts/base.html' %}
 {% load static %}
+{% load social_share %}
 {% block title %}{{ post.title }} {% endblock %}
 
 {% block content %}
@@ -12,6 +13,9 @@
     <section class="author">
         <p class="author">Author: <strong> {{ post.author }} </strong></p>
         <p class="author"><i class="fa fa-calendar" aria-hidden="true"></i> {{post.created|date:'Y-m-d'}} | <i class="fa fa-clock-o"></i> {{ post.reading }} read </p>
+        {% post_to_facebook %}
+        {% post_to_twitter "New Song: {{object.title}}. Check it out!" object_or_url "Post to Twitter" %}
+        {% post_to_linkedin object_or_url %}
         <span class="tags-info">
             <a><i class="fa fa-tag" aria-hidden="true"></i></a>
             {% for tag in post.tags.all %}
