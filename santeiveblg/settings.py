@@ -38,11 +38,14 @@ INSTALLED_APPS = [
     'taggit',
     'ckeditor',
     'ckeditor_uploader',
+<<<<<<< HEAD
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'storages',
     'django.contrib.postgres',
     'django_social_share',
+=======
+>>>>>>> 90b3bcf... format and ckeditor
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
@@ -154,6 +157,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'Custom',
         'toolbar_Custom': [
             ['Bold', 'Italic', 'Underline'],
+<<<<<<< HEAD
             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'Blockquote'],
             ['Link', 'Unlink'],
             ['RemoveFormat', 'Source', 'CodeSnippet'],
@@ -161,6 +165,13 @@ CKEDITOR_CONFIGS = {
         ],
         'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
         'extraPlugins': ','.join(['mathjax','codesnippet']),  
+=======
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source', 'CodeSnippet']
+        ],
+        'extraPlugins':'codesnippet'
+>>>>>>> 90b3bcf... format and ckeditor
     }
 }
 
