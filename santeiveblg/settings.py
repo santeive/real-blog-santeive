@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts.apps.PostsConfig',
+    'projects.apps.ProjectsConfig',
     'taggit',
     'ckeditor',
     'ckeditor_uploader',
