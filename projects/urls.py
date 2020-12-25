@@ -5,5 +5,4 @@ app_name = 'projects'
 
 urlpatterns = [
     path('', views.projects, name="projects"),
-    path('project', views.projects, name="project"),
 ]
