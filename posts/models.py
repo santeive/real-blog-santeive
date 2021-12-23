@@ -1,10 +1,13 @@
+# Django
 from django.db import models
-from ckeditor.fields import RichTextField
 from django.urls import reverse
 from django.utils import timezone
-from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 from django.conf import settings
+
+# Third Party
+from ckeditor.fields import RichTextField
+from taggit.managers import TaggableManager
 
 # Custom manager
 class PublishedManager(models.Manager):
